@@ -1,0 +1,24 @@
+{
+  "name": "lp-starter",
+  "version": "1.0.0",
+  "description": "Landing page Starter Kit",
+  "main": "",
+  "moduleType": [],
+  "authors": [
+    "Jeremy Ferrer"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "~3.2.0",
+    "jquery": "2.1.4"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
