@@ -1,4 +1,4 @@
-$font-stack: Helvetica, sans-serif;
+$font-stack: 'Source Sans Pro', Helvetica, sans-serif;
 
 // MQ Breaks
 $break-xs: 320px;
@@ -57,7 +57,7 @@ body {
     width: 100%;
     display: table;
     font-weight: 100;
-    font-family: 'Lato';
+    font-family: $font-stack;
 }
 .all-blocks{
   display: flex;
