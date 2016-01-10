@@ -1,69 +1,70 @@
 /*==========  Mobile First Method  ==========*/
 /* Custom, iPhone Retina */
-@media only screen and (min-width: 320px) {
-  .row {
-    min-height: 100px; } }
-
 /* Extra Small Devices, Phones */
 /* Small Devices, Tablets */
+@media only screen and (min-width: 768px) {
+  .title {
+    font-size: 75px !important; } }
+
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 992px) {
-  .container {
-    width: 100%; }
+  .title {
+    font-size: 50px !important; }
   .row {
     min-height: 200px; }
-  .main-block .photo img {
-    width: 300px !important;
-    border: 20px solid #eee !important; }
-  .main-block .content .name {
-    text-align: left; } }
+  .main-block {
+    width: 900px !important; }
+    .main-block .content .name {
+      text-align: left; }
+    .main-block .social {
+      text-align: left; }
+    .main-block .work {
+      text-align: right; }
+    .main-block .row {
+      padding-bottom: 40px; }
+    .main-block .col-md-6 {
+      padding-top: 0px !important; } }
 
 /* Desktops */
-@media only screen and (min-width: 1205px) {
-  .main-block {
-    width: 1200px; } }
-
 body {
   margin: 0;
   padding: 0;
   width: 100%;
   display: table;
   font-weight: 100;
-  font-family: "Source Sans Pro", Helvetica, sans-serif; }
+  font-family: "Poiret One", Helvetica, sans-serif; }
 
 .all-blocks {
-  display: flex;
-  align-items: center;
-  min-height: 100%;
-  /* Fallback for browsers do NOT support vh unit */
-  min-height: 100vh;
-  /* These two lines are counted as one :-)       */ }
+  padding-top: 50px; }
 
 .main-block {
-  margin: 0 auto; }
+  margin: 0 auto;
+  width: 100%; }
   .main-block .row {
     border-bottom: 1px solid #eee;
-    padding-top: 20px;
+    padding-top: 40px;
     padding-bottom: 40px; }
+    .main-block .row .content {
+      text-align: center; }
   .main-block .row.footer {
-    border: none;
-    display: flex;
-    align-items: flex-end; }
+    border: none; }
   .main-block .photo img {
-    width: 200px;
+    width: 250px;
     border-radius: 50%;
     border: 10px solid #eee;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); }
   .main-block .typewriter {
     font-size: 0.3em; }
+  .main-block .name {
+    font-size: 1.25em; }
+  .main-block .col-md-6 {
+    padding-top: 20px; }
 
 .container {
   text-align: center;
   display: block;
-  vertical-align: middle; }
-
-.content {
-  text-align: center; }
+  vertical-align: middle;
+  width: 90%; }
 
 .title {
-  font-size: 96px; }
+  font-size: 100px; }

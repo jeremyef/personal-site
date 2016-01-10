@@ -1,4 +1,4 @@
-$font-stack: 'Source Sans Pro', Helvetica, sans-serif;
+$font-stack: 'Poiret One', Helvetica, sans-serif;
 
 // MQ Breaks
 $break-xs: 320px;
@@ -11,7 +11,7 @@ $break-xl: 1200px;
 /* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) {
   .row{
-    min-height: 100px;
+    //min-height: 100px;
   }
 
 }
@@ -23,31 +23,54 @@ $break-xl: 1200px;
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
-
+  .title{
+    font-size: 75px !important;
+  }
 }
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
   .container {
-    width: 100%;
+
+  }
+  .title{
+    font-size:50px !important;
   }
   .row{
     min-height: 200px;
   }
   .main-block{
+    width:900px !important;
+    //width:880px !important;
     .photo img {
-      width:300px !important;
-      border:20px solid #eee !important;
+
     }
     .content .name{
       text-align:left;
     }
+    .social{
+      text-align:left;
+    }
+    .work{
+      text-align:right;
+    }
+    .row{
+      padding-bottom:40px;
+    }
+    .col-md-6{
+      padding-top:0px !important;
+    }
+
   }
 }
 /* Desktops */
-@media only screen and (min-width : 1205px) {
+@media only screen and (min-width : 1200px) {
+  .container{
+
+  }
   .main-block{
-    width:1200px;
+    //width:880px !important;
+
   }
 }
 
@@ -60,25 +83,29 @@ body {
     font-family: $font-stack;
 }
 .all-blocks{
-  display: flex;
-  align-items: center;
-  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
-  min-height: 100vh; /* These two lines are counted as one :-)       */
+  //display: flex;
+  //align-items: center;
+  //min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  //min-height: 100vh; /* These two lines are counted as one :-)       */
+  padding-top:50px;
 }
 .main-block{
     margin: 0 auto;
+    width:100%;
     .row {
       border-bottom: 1px solid #eee;
-      padding-top:20px;
+      padding-top:40px;
       padding-bottom:40px;
+      .content {
+          text-align: center;
+      }
     }
     .row.footer{
         border:none;
-        display: flex;
-        align-items: flex-end;
+
     }
     .photo img{
-      width:200px;
+      width:250px;
       border-radius:50%;
       border: 10px solid #eee;
       box-shadow: 0px 0px 10px rgba(0,0,0,.5)
@@ -86,19 +113,20 @@ body {
     .typewriter {
       font-size: 0.3em;
     }
+    .name {
+      font-size:1.25em;
+    }
+    .col-md-6{
+      padding-top:20px;
+    }
 }
 .container {
-    text-align: center;
-    display: block;
-    vertical-align: middle;
+  text-align: center;
+  display: block;
+  vertical-align: middle;
+  width:90%;
 
 }
-
-.content {
-    text-align: center;
-
-}
-
 .title {
-    font-size: 96px;
+    font-size: 100px;
 }
