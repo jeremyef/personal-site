@@ -1,17 +1,23 @@
 /*==========  Mobile First Method  ==========*/
 /* Custom, iPhone Retina */
 /* Extra Small Devices, Phones */
+@media only screen and (min-width: 480px) {
+  .all-blocks {
+    display: block !important;
+    align-items: initial !important; } }
+
 /* Small Devices, Tablets */
 @media only screen and (min-width: 768px) {
   .title {
-    font-size: 75px !important; } }
+    font-size: 75px !important; }
+  .main-block .footer {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important; } }
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 992px) {
   .title {
     font-size: 50px !important; }
-  .row {
-    min-height: 200px; }
   .main-block {
     width: 900px !important; }
     .main-block .content .name {
@@ -27,15 +33,26 @@
 
 /* Desktops */
 body {
+  background: url("/media/bg-1.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 45% 50%;
   margin: 0;
   padding: 0;
   width: 100%;
   display: table;
-  font-weight: 100;
+  font-weight: bold;
   font-family: "Poiret One", Helvetica, sans-serif; }
 
 .all-blocks {
-  padding-top: 50px; }
+  display: flex;
+  align-items: center;
+  min-height: 100%;
+  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh;
+  /* These two lines are counted as one :-)       */
+  padding-top: 50px;
+  padding-bottom: 50px; }
 
 .main-block {
   margin: 0 auto;
@@ -49,9 +66,9 @@ body {
   .main-block .row.footer {
     border: none; }
   .main-block .photo img {
-    width: 250px;
+    width: 150px;
     border-radius: 50%;
-    border: 10px solid #eee;
+    border: 2px solid #eee;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); }
   .main-block .typewriter {
     font-size: 0.3em; }
@@ -64,7 +81,8 @@ body {
   text-align: center;
   display: block;
   vertical-align: middle;
-  width: 90%; }
+  width: 90%;
+  background: rgba(255, 255, 255, 0.8); }
 
 .title {
   font-size: 100px; }

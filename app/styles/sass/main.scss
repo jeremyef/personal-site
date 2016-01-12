@@ -18,13 +18,23 @@ $break-xl: 1200px;
 
 /* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px) {
+  .all-blocks{
+    display: block !important;
+    align-items: initial !important;
 
+  }
 }
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
   .title{
     font-size: 75px !important;
+  }
+  .main-block{
+    .footer{
+      padding-top:10px !important;
+      padding-bottom:10px !important;
+    }
   }
 }
 
@@ -37,7 +47,7 @@ $break-xl: 1200px;
     font-size:50px !important;
   }
   .row{
-    min-height: 200px;
+
   }
   .main-block{
     width:900px !important;
@@ -75,19 +85,24 @@ $break-xl: 1200px;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    display: table;
-    font-weight: 100;
-    font-family: $font-stack;
+  background:url('/media/bg-1.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 45% 50%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: table;
+  font-weight: bold;
+  font-family: $font-stack;
 }
 .all-blocks{
-  //display: flex;
-  //align-items: center;
-  //min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
-  //min-height: 100vh; /* These two lines are counted as one :-)       */
+  display: flex;
+  align-items: center;
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
   padding-top:50px;
+  padding-bottom:50px;
 }
 .main-block{
     margin: 0 auto;
@@ -105,9 +120,9 @@ body {
 
     }
     .photo img{
-      width:250px;
+      width:150px;
       border-radius:50%;
-      border: 10px solid #eee;
+      border: 2px solid #eee;
       box-shadow: 0px 0px 10px rgba(0,0,0,.5)
     }
     .typewriter {
@@ -125,6 +140,7 @@ body {
   display: block;
   vertical-align: middle;
   width:90%;
+  background:rgba(255,255,255,0.80);
 
 }
 .title {
