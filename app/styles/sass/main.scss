@@ -1,33 +1,145 @@
-$font-stack: 'Poiret One', Helvetica, sans-serif;
+$font-stack: 'Roboto', sans-serif;
 
 
 
 /*==========  Mobile First Method  ==========*/
 /* Custom, iPhone Retina */
-@media only screen and (min-width : 320px) {
+/*@media only screen and (min-width : 320px) {
 
 }
 
-/* Extra Small Devices, Phones */
+// Extra Small Devices, Phones
 @media only screen and (min-width : 480px) {
 
+
 }
 
-/* Small Devices, Tablets */
+// Small Devices, Tablets
 @media only screen and (min-width : 768px) {
+  .container{
+    width: 450px;
+  }
+}*/
+/* Small Devices, Tablets */
+@media only screen and (min-width : 980px) {
+  .container{
+    width: 600px;
+  }
+  .avatar{
+    width:130px !important;
+    height:130px !important;
+    margin: -65px auto 0 !important;
 
+  }
 }
-
+@media only screen and (min-width : 980px) and (max-height: 552px),screen and (min-width : 980px) and (max-height: 613px) {
+  body{
+    font-size: 20px !important;
+  }
+  h1 {
+    font-size:25px !important;
+  }
+  .container{
+    width: 450px;
+  }
+}
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
-
+  .b
+  .main{
+    display:flex;
+    align-items: center;
+    min-height:100%;
+    min-height:100vh;
+  }
+  .container{
+    width: 350px;
+  }
 }
 /* Desktops */
 @media only screen and (min-width : 1200px) {
+  body{
+    font-size: 20px !important;
+  }
+  h1 {
+    font-size: 25px !important;
+  }
+  .container{
+    width: 320px;
+  }
+  .avatar{
+    width:100px !important;
+    height:100px !important;
+    margin: -50px auto 0 !important;
 
+  }
 }
 
 body {
-  font-weight: bold;
+  font-weight:100;
   font-family: $font-stack;
+  background: #2b303b;
+  font-size:40px;
+}
+h1{
+  font-size: 70px;
+}
+.main{
+  display:flex;
+  align-items: center;
+
+  min-height:100%;
+  min-height:100vh;
+  img {
+    width:100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  .card{
+    background: #fff;
+    border-radius: 5px;
+    .avatar{
+      width:100px;
+      height:100px;
+      background: #fff;
+      position:relative;
+      margin: -50px auto 0;
+      border: 1px solid #000;
+      border-radius: 50%;
+    }
+    .nameplate{
+      color: #000;
+      text-align: center;
+      padding: 0 0 20px;
+      h1{
+        font-weight:300;
+      }
+    }
+  }
+
+
+  //display:flex;
+  //align-items: center;
+  //min-height: 100vh;
+  /*
+  .card{
+    background: #FFF;
+    width:300px;
+    margin: 0 auto;
+    border-radius: 5px;
+    .splash{
+      img{
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      }
+    }
+    .avatar{
+      margin:0 auto;
+      margin: -55px auto 15px;
+      display: block;
+      border-radius: 50%;
+      border: 3px solid #fff;
+    }
+  }
+  */
 }
