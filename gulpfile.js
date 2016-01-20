@@ -29,7 +29,8 @@ var settings = {
     sass_dir: './app/styles/sass',
     sass_dir_all: './app/styles/sass/*.scss',
     sass_css: './app/styles/css/sass.css',
-    bootstrap_dir: './app/bower_components/bootstrap'
+    bootstrap_dir: './app/bower_components/bootstrap',
+    font_awesome_dir: './app/bower_components/components-font-awesome'
 
 };
 
@@ -127,6 +128,13 @@ gulp.task('dist_copy_fonts', function(){
   return gulp.src(settings.bootstrap_dir + '/dist/fonts/*')
     .pipe(gulp.dest(settings.dist_dir + '/fonts'));
 });
+/* Copies font icons from font awesome
+    Copies font files from the font awesome directory,into the dist directory.
+*/
+gulp.task('dist_copy_icons', function(){
+  return gulp.src(settings.font_awesome_dir + '/fonts/*')
+    .pipe(gulp.dest(settings.dist_dir + '/fonts'));
+});
 
 /* ------------
    Webserver Tasks - These sub tasks are used to create a webserver that will load the app directory (settings.app_dir) as the root directory
@@ -152,7 +160,8 @@ gulp.task('webserver', ['webserver_watch'], function() {
 gulp.task('webserver_dist', function() {
    plugins.connect.server({
     root: settings.dist_dir,
-    livereload: true
+    livereload: true,
+    port: 8081
   });
   opn('http://localhost:8081');
 });
@@ -191,7 +200,7 @@ gulp.task('default', function(cb){
 });
 /* Distribution tasks */
 gulp.task('dist', function(cb){
-  runSequence('dist_bundle_files','dist_copy_fonts','webserver_dist');
+  runSequence('dist_bundle_files','dist_copy_fonts','dist_copy_icons','webserver_dist');
 });
 /* Inject tasks */
 gulp.task('inject', function(cb){
