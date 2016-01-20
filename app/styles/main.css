@@ -1,3 +1,41 @@
+body {
+  font-weight: 100;
+  font-family: "Roboto", sans-serif;
+  background: #2b303b;
+  font-size: 40px; }
+
+h1 {
+  font-size: 70px; }
+
+.main {
+  display: flex;
+  align-items: center;
+  min-height: 100%;
+  min-height: 100vh; }
+  .main .img-responsive {
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px; }
+  .main .card {
+    background: #fff;
+    border-radius: 5px; }
+    .main .card .avatar {
+      width: 100px;
+      height: 100px;
+      background: #fff;
+      position: relative;
+      margin: -50px auto 0;
+      border: 1px solid #000;
+      border-radius: 50%; }
+      .main .card .avatar .img-responsive {
+        border-radius: 50%; }
+    .main .card .nameplate {
+      color: #000;
+      text-align: center;
+      padding: 0 0 20px; }
+      .main .card .nameplate h1 {
+        font-weight: 300; }
+
 /*==========  Mobile First Method  ==========*/
 /* Custom, iPhone Retina */
 /*@media only screen and (min-width : 320px) {
@@ -40,9 +78,7 @@
     display: flex;
     align-items: center;
     min-height: 100%;
-    min-height: 100vh; }
-  .container {
-    width: 350px; } }
+    min-height: 100vh; } }
 
 /* Desktops */
 @media only screen and (min-width: 1200px) {
@@ -56,60 +92,3 @@
     width: 100px !important;
     height: 100px !important;
     margin: -50px auto 0 !important; } }
-
-body {
-  font-weight: 100;
-  font-family: "Roboto", sans-serif;
-  background: #2b303b;
-  font-size: 40px; }
-
-h1 {
-  font-size: 70px; }
-
-.main {
-  display: flex;
-  align-items: center;
-  min-height: 100%;
-  min-height: 100vh;
-  /*
-  .card{
-    background: #FFF;
-    width:300px;
-    margin: 0 auto;
-    border-radius: 5px;
-    .splash{
-      img{
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
-      }
-    }
-    .avatar{
-      margin:0 auto;
-      margin: -55px auto 15px;
-      display: block;
-      border-radius: 50%;
-      border: 3px solid #fff;
-    }
-  }
-  */ }
-  .main img {
-    width: 100%;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px; }
-  .main .card {
-    background: #fff;
-    border-radius: 5px; }
-    .main .card .avatar {
-      width: 100px;
-      height: 100px;
-      background: #fff;
-      position: relative;
-      margin: -50px auto 0;
-      border: 1px solid #000;
-      border-radius: 50%; }
-    .main .card .nameplate {
-      color: #000;
-      text-align: center;
-      padding: 0 0 20px; }
-      .main .card .nameplate h1 {
-        font-weight: 300; }
