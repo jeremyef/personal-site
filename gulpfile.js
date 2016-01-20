@@ -154,7 +154,7 @@ gulp.task('webserver_dist', function() {
     root: settings.dist_dir,
     livereload: true
   });
-  opn('http://localhost:8080');
+  opn('http://localhost:8081');
 });
 /* Reloads the src file.
     Will take the app_index and reload that page.
