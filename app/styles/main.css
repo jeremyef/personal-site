@@ -248,10 +248,14 @@ a:hover, a:active {
   .container {
     width: 500px; }
   .main .card .link-bar {
-    width: 55%;
+    width: 75%;
     margin: 0 auto; }
     .main .card .link-bar .fa-3x {
       font-size: 1.5em; } }
+
+@media only screen and (min-width: 768px) {
+  .main .flip-container {
+    min-height: 395px; } }
 
 /* Small Devices, Tablets */
 /* Medium Devices, Desktops */

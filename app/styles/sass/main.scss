@@ -306,7 +306,7 @@ a:hover, a:active{
   .main{
     .card{
       .link-bar{
-        width: 55%;
+        width: 75%;
         margin: 0 auto;
         .fa-3x{
           font-size:1.5em;
@@ -317,7 +317,11 @@ a:hover, a:active{
 }
 // Small Devices, Tablets
 @media only screen and (min-width : 768px) {
-
+	.main{
+		.flip-container{
+			min-height:395px;
+		}
+	}
 
 
 }
