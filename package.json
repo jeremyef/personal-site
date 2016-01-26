@@ -1,7 +1,7 @@
 {
-  "name": "web-starter",
+  "name": "personal-site",
   "version": "1.0.0",
-  "description": "Web page Starter kit",
+  "description": "Development for my Personal Site http://jeremyeferrer.info",
   "scripts": {
     "start": "npm install && bower install && echo \"$(tput bold)Install Complete \r\n$(tput setaf 1)$(tput bold)Run 'gulp default' to start$(tput sgr 0)\""
   },
@@ -13,6 +13,7 @@
     "gulp-connect": "^2.2.0",
     "gulp-filter": "^3.0.1",
     "gulp-if": "^2.0.0",
+    "gulp-image-resize": "^0.7.1",
     "gulp-inject": "^3.0.0",
     "gulp-load-plugins": "^0.10.0",
     "gulp-minify-css": "^1.2.2",
