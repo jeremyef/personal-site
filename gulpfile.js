@@ -3,11 +3,13 @@
 // Initialize required packages
 var gulp = require('gulp');                       // Our task runner
 var plugins = require('gulp-load-plugins')(       // Auto loads all gulp plugins
-  {rename: {'gulp-minify-css': 'minifycss'}}        // Overwrites the plugin shortname
+  {rename: {'gulp-minify-css': 'minifycss',
+  'gulp-image-resize': 'imgresize'}}        // Overwrites the plugin shortnames
 );
 var wiredep = require('wiredep').stream;          // For injection tasks
 var runSequence = require('run-sequence');        // For running tasks/jobs in sequence.
 var opn = require('opn');                         // For openeing urls.
+var del = require('del');
 
 /* Setting variables
   A javascript dictionary with key pair values for directory settings.
@@ -29,6 +31,7 @@ var settings = {
     sass_dir: './app/styles/sass',
     sass_dir_all: './app/styles/sass/*.scss',
     sass_css: './app/styles/css/sass.css',
+    media_dir: './app/media/',
     bootstrap_dir: './app/bower_components/bootstrap',
     font_awesome_dir: './app/bower_components/components-font-awesome'
 
@@ -189,6 +192,62 @@ gulp.task('webserver_watch', function() {
   gulp.watch([settings.app_index, settings.scripts_dir_all], ['webserver_reload']);
   gulp.watch([settings.sass_dir_all], ['webserver_reload_sass']);
 })
+
+
+/* ------------
+   Image Tasks - These tasks are used to deal with images used
+   ------------ */
+
+/*
+  Resizes background images used for header section of cards. Runs clean_media_bg before executing.
+*/
+gulp.task('resize_image_bg',['clean_media_bg'], function(){
+  gulp.src(settings.media_dir + 'source/bg-*.{jpg,jpeg}')
+  .pipe(plugins.imgresize({
+      width: 700,
+      height: 200,
+      crop: true,
+      format: 'jpg'
+    }))
+  .pipe(plugins.rename(function(path) { path.basename += "-rs"}))
+  .pipe(gulp.dest(settings.media_dir))
+});
+/*
+  Resized avatar images used for avatars on both sides of the cards.
+*/
+gulp.task('resize_image_avatar', ['clean_media_avatar'], function(){
+  gulp.src(settings.media_dir + 'source/avatar-*.{jpg,jpeg}')
+  .pipe(plugins.imgresize({
+      width: 130,
+      height: 130,
+      crop: true,
+      format: 'jpg'
+    }))
+  .pipe(plugins.rename(function(path) { path.basename += "-rs"}))
+  .pipe(gulp.dest(settings.media_dir))
+});
+
+/* ------------
+   Clean Tasks - Tasks that Deletes files
+   ------------ */
+
+/*
+  Deletes all bg images in media directory
+*/
+gulp.task('clean_media_bg', function(){
+  return del([
+    settings.media_dir + 'bg-*.{jpg,jpeg}',
+  ]);
+});
+/*
+  Deletes all avatar images in media directory
+*/
+gulp.task('clean_media_avatar', function(){
+  return del([
+    settings.media_dir + 'avatar-*.{jpg,jpeg,png}',
+  ]);
+});
+
 
 /* ------------
    Primary Tasks - These primary tasks call sub tasks to run in sequence.

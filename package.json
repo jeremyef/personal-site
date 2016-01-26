@@ -8,6 +8,7 @@
   "author": "Jeremy Ferrer",
   "license": "MIT",
   "devDependencies": {
+    "del": "^2.2.0",
     "gulp": "^3.9.0",
     "gulp-bower-src": "^0.1.0",
     "gulp-connect": "^2.2.0",
