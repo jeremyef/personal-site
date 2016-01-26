@@ -210,7 +210,7 @@ gulp.task('webserver_watch', function() {
   Resizes background images used for header section of cards. Runs clean_media_bg before executing.
 */
 gulp.task('resize_image_bg',['clean_media_bg'], function(){
-  gulp.src(settings.media_dir + 'source/bg-*.{jpg,jpeg}')
+  gulp.src(settings.media_dir + 'source/bg-*.{jpg,jpeg,png}')
   .pipe(plugins.imgresize({
       width: 700,
       height: 200,
@@ -224,7 +224,7 @@ gulp.task('resize_image_bg',['clean_media_bg'], function(){
   Resized avatar images used for avatars on both sides of the cards.
 */
 gulp.task('resize_image_avatar', ['clean_media_avatar'], function(){
-  gulp.src(settings.media_dir + 'source/avatar-*.{jpg,jpeg}')
+  gulp.src(settings.media_dir + 'source/avatar-*.{jpg,jpeg,png}')
   .pipe(plugins.imgresize({
       width: 130,
       height: 130,
