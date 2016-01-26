@@ -5,6 +5,24 @@ $( document ).ready(function() {
     updateYear();
 
 
+    $('.toggle').click(function(e) {
+      var toggle = this;
+
+      e.preventDefault();
+
+      $(toggle).toggleClass('toggle--on')
+             .toggleClass('toggle--off')
+             .addClass('toggle--moving');
+
+      setTimeout(function() {
+        $(toggle).removeClass('toggle--moving');
+      }, 200)
+
+      $('.flip-container').toggleClass("flip");
+      $('body').toggleClass('game')
+      $('html, body').animate({ scrollTop:0}, 'slow');
+    });
+
 
 
 });
