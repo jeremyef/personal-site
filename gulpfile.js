@@ -138,6 +138,14 @@ gulp.task('dist_copy_icons', function(){
   return gulp.src(settings.font_awesome_dir + '/fonts/*')
     .pipe(gulp.dest(settings.dist_dir + '/fonts'));
 });
+/* Copies images in the media directory.
+    Copies files in the app/media directory. Only images, excludes source directory.
+*/
+gulp.task('dist_copy_media', function(){
+  return gulp.src(settings.media_dir + '*.{jpg,jpeg,png}')
+    .pipe(gulp.dest(settings.dist_dir + '/media'));
+});
+
 
 /* ------------
    Webserver Tasks - These sub tasks are used to create a webserver that will load the app directory (settings.app_dir) as the root directory
@@ -247,7 +255,14 @@ gulp.task('clean_media_avatar', function(){
     settings.media_dir + 'avatar-*.{jpg,jpeg,png}',
   ]);
 });
-
+/*
+  Deletes all files in dist directory
+*/
+gulp.task('clean_dist', function(){
+  return del([
+    settings.dist_dir + '*',
+  ]);
+});
 
 /* ------------
    Primary Tasks - These primary tasks call sub tasks to run in sequence.
@@ -258,8 +273,11 @@ gulp.task('default', function(cb){
   runSequence('inject','webserver');
 });
 /* Distribution tasks */
-gulp.task('dist', function(cb){
-  runSequence('dist_bundle_files','dist_copy_fonts','dist_copy_icons','webserver_dist');
+gulp.task('dist', ['clean_dist'], function(cb){
+  runSequence('dist_bundle_files','dist_copy_fonts','dist_copy_icons','dist_copy_media');
+});
+gulp.task('dist_serve', ['clean_dist'], function(cb){
+  runSequence('dist_bundle_files','dist_copy_fonts','dist_copy_icons','dist_copy_media','webserver_dist');
 });
 /* Inject tasks */
 gulp.task('inject', function(cb){
