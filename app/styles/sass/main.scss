@@ -1,4 +1,5 @@
 $font-stack: 'Roboto', sans-serif;
+$card-min-height: 410px;
 
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
@@ -80,7 +81,7 @@ a:hover, a:active{
   color: 2b303b;
 }
 .container{
-  width:350px;
+  width:320px;
 }
 .main{
   display:flex;
@@ -102,7 +103,7 @@ a:hover, a:active{
 	  -moz-transform-style: preserve-3d;
 	  -webkit-transform-style: preserve-3d;
 	  transform-style: preserve-3d;
-		min-height:355px;
+		min-height:$card-min-height;
 		.front {
 		  z-index: 2;
 		}
@@ -144,10 +145,26 @@ a:hover, a:active{
 	  -webkit-transform: rotateY(-180deg);
 	  transform: rotateY(-180deg);
 	}
+	.card.work {
+		.link-bar{
+			.item{
+				width: 32%;
+			}
+			a:nth-child(-n+2) .item{
+				border-right: 1px solid #EAEAEA;
+			}
+		}
+	}
+	.card.play{
+		.link-bar{
+			a:nth-child(-n+1) .item{
+				border-right: 1px solid #EAEAEA;
+			}
+		}
+	}
   .card{
     background: #fff;
     border-radius: 5px;
-
     .section{
       padding: 5px 0;
       text-align: center;
@@ -168,10 +185,11 @@ a:hover, a:active{
       color: #000;
       text-align: center;
       margin: 10px 0 0;
-      padding: 0 0 20px;
+      padding: 0 0 10px;
       .name{
         font-weight:300;
-        font-size: 2em
+        font-size: 2em;
+				padding-bottom:0.2em;
       }
       .subheading{
         margin: 5px 0;
@@ -183,22 +201,24 @@ a:hover, a:active{
         font-size: .8em;
       }
     }
+		.quote{
+			padding: 20px 0;
+			font-style:italic;
+		}
+		.quote{
+			width:80%;
+			margin: 0 auto;
+		}
     .link-bar{
       width:80%;
 			margin: 0 auto;
       text-align:center;
-			padding:10px 0;
+			padding:10px 0 30px;
 			border-top: 1px solid #EAEAEA;
-			border-bottom: 1px solid #EAEAEA;
       .item{
         width:49%;
         display: inline-block;
-
       }
-			.item.email, .item.steam{
-				border-right: 1px solid #EAEAEA;
-			}
-
     }
     .place{
       padding-bottom: 20px;
@@ -273,7 +293,11 @@ a:hover, a:active{
 .footer{
 	color:white;
 	text-align: center;
-	font-size: 0.5em;
+	font-size: 0.8em;
+	a{
+		color:white;
+		text-decoration: underline;
+	}
 }
 
 [class^="icon-"], [class*=" icon-"] {
@@ -293,7 +317,7 @@ a:hover, a:active{
   }
 	.main{
 		.flip-container{
-			min-height:375px;
+			min-height: $card-min-height + 35;
 		}
 	}
 }
@@ -304,8 +328,12 @@ a:hover, a:active{
     width:500px;
   }
   .main{
+		.flip-container{
+			min-height: $card-min-height + 60;
+		}
+
     .card{
-      .link-bar{
+      .link-bar, .quote{
         width: 75%;
         margin: 0 auto;
         .fa-3x{
@@ -317,11 +345,6 @@ a:hover, a:active{
 }
 // Small Devices, Tablets
 @media only screen and (min-width : 768px) {
-	.main{
-		.flip-container{
-			min-height:395px;
-		}
-	}
 
 
 }
@@ -329,7 +352,6 @@ a:hover, a:active{
 @media only screen and (min-width : 980px) {
 
 }
-
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
 

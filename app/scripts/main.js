@@ -4,15 +4,15 @@ $( document ).ready(function() {
     // Updates footer year incase someone forgets
     updateYear();
 
-
+    // Toggle handler for slider
     $('.toggle').click(function(e) {
       var toggle = this;
 
       e.preventDefault();
 
-      $(toggle).toggleClass('toggle--on')
-             .toggleClass('toggle--off')
-             .addClass('toggle--moving');
+      $(this).toggleClass('toggle--on')
+        .toggleClass('toggle--off')
+        .addClass('toggle--moving');
 
       setTimeout(function() {
         $(toggle).removeClass('toggle--moving');
@@ -20,7 +20,7 @@ $( document ).ready(function() {
 
       $('.flip-container').toggleClass("flip");
       $('body').toggleClass('game')
-      $('html, body').animate({ scrollTop:0}, 'slow');
+      $('html, body').animate({ scrollTop: 20}, 'slow');
     });
 
 
