@@ -1,7 +1,7 @@
 # Personal Site
 ## Description
 
-This is my Web Page development scaffolding tool, specifically used for my site: [http://jeremyeferrer.info](http://jeremyeferer.info).
+This is my Web Page development scaffolding tool, specifically used for my site: [http://jeremyeferrer.info](http://jeremyeferrer.info).
 
 I used my [web-starer](https://github.com/jeremyef/web-starter) boilerplate as a base to begin with and worked from there.
 
