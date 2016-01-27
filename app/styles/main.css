@@ -46,7 +46,7 @@ table {
   border-spacing: 0; }
 
 body {
-  font-weight: 100;
+  font-weight: 400;
   font-family: "Roboto", sans-serif;
   background: #2b303b;
   -webkit-transition: background-color 0.5s ease-in-out;
@@ -172,7 +172,8 @@ a:hover, a:active {
       font-style: italic; }
     .main .card .quote {
       width: 80%;
-      margin: 0 auto; }
+      margin: 0 auto;
+      font-weight: 200; }
     .main .card .link-bar {
       width: 80%;
       margin: 0 auto;
